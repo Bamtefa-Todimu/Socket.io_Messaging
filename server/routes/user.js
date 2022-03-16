@@ -50,7 +50,7 @@ routes.post('/login', async (req,res) => {
         if(verifyUser.length > 0)
         {
             console.log(verifyUser);
-            res.redirect(`http://localhost:8080/chat.html?username=${req.body.username}&profilepic=${verifyUser[0].profilePicture}`)
+            res.redirect(`https://heuristic-keller-7238af.netlify.app/chat.html?username=${req.body.username}&profilepic=${verifyUser[0].profilePicture}`)
         }
         else
         {
