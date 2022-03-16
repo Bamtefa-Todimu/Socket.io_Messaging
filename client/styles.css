@@ -171,18 +171,16 @@ body {
 }
 
 .lower-properties {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.2em 0.5em;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  padding: 0.3rem 0.8rem;
   align-items: center;
-  background-color: white;
+  /* background-color: white; */
 }
 
 .send-btn {
   background-color: #148567;
   color: gainsboro;
-  display: grid;
-  place-items: center;
   cursor: pointer;
   padding: 0.3em;
   width: 45px;
@@ -191,6 +189,7 @@ body {
   place-content: center;
   border-radius: 3px;
   position: relative;
+  margin-left: auto;
 }
 
 .send-btn img {
@@ -325,5 +324,14 @@ body {
     padding-left: 0;
     border-left: 0;
     border-top: 1px solid var(--navbar-dark);
+  }
+
+  .lower-properties {
+    height: 80px;
+    /* background-color: red; */
+  }
+
+  .body-container {
+    padding-bottom: 0rem;
   }
 }
