@@ -9,7 +9,7 @@ const multer = require('multer')
 
 const storage = multer.diskStorage({
     destination:function (req, file, cb) {
-    cb(null, '../client/uploads')
+    cb(null, 'https://heuristic-keller-7238af.netlify.app/uploads')
   },
 
   filename:function(req,file,cb)
