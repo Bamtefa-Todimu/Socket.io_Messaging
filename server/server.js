@@ -18,6 +18,10 @@ app.use(express.urlencoded({extended:true}))
 app.use('/api/v1',Users)
 app.use(bodyParser.json())
 
+app.get('/',(req,res) => {
+    res.json({message:"server is live"})
+})
+
 server.listen(process.env.PORT || 4000, ()=>{
     dbConnection()
     console.log("listening on port 4000");
