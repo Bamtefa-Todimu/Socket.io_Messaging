@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "parcel-bundler": "^1.12.5",
     "snowpack": "^3.8.8"
   },
   "name": "client",
@@ -350,7 +351,9 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "start": "snowpack dev"
+    "start": "snowpack dev",
+    "dev": "parcel index.html",
+"build": "parcel build index.html"
   },
   "keywords": [],
   "author": "",

@@ -1,4 +1,4 @@
-import {io, Socket} from './node_modules/socket.io-client'
+import {io, Socket} from 'socket.io-client'
 
 const urlParam  = new URLSearchParams(window.location.search)
 const params  = urlParam.get('username');
