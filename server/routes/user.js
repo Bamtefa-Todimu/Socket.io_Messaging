@@ -50,7 +50,7 @@ routes.post('/login', async (req,res) => {
         if(verifyUser.length > 0)
         {
             console.log(verifyUser);
-            res.json({message:username})
+            // res.json({message:username})
             res.redirect(`https://heuristic-keller-7238af.netlify.app/chat.html?username=${req.body.username}&profilepic=${verifyUser[0].profilePicture}`)
         }
         else
@@ -61,7 +61,7 @@ routes.post('/login', async (req,res) => {
     catch(e)
     {
         console.log(e);
-        res.json({message:e})
+        res.json({message:"something has occured"})
     }
 })
 
