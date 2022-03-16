@@ -9,7 +9,14 @@ const serverless = require("serverless-http")
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
-const io = new Server(server);
+// const io = new Server(server);
+
+const io = require("socket.io")(server, {
+  cors: {
+    origin: "https://heuristic-keller-7238af.netlify.app",
+    methods: ["GET", "POST"]
+  }
+});
 
 const bodyParser = require('body-parser')
 
