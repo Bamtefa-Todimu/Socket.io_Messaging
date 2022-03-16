@@ -74,4 +74,8 @@ routes.delete("/deleteMessages", async(req,res) => {
     }
 })
 
+routes.post("/checking",(req,res) =>{
+    res.json({messages:"we here atleast"})
+})
+
 exports.Users = routes
