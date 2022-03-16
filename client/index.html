@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="auth-container">
+
+        <div class="login-form-container">
+            <form action="http://localhost:4000/api/v1/login" method = "post" class="login">
+                
+                <h1>Login</h1>
+
+                <div class="username-container">
+                    <p>username</p>
+                    <input type="text" class="username" placeholder = "username" name = "username">
+                    
+                </div>
+                <div class="password-container">
+                    <p>Password</p>
+                    <input type="text" class="password" placeholder = "password" name = "password">
+                    
+                </div>
+
+                
+                <p>
+
+                    <input type="submit" value="Login" class  = "submit" >
+                </p>
+
+                <p class="signupLink switch-link"> Dont have an account ? Signup </p>
+
+                </form>
+        </div>
+
+
+        <div class="signup-form-container">
+            <form action="http://localhost:4000/api/v1/register" method = "post" class="login" enctype="multipart/form-data">
+                
+                <h1>Sign-Up</h1>
+
+                <div class="username-container">
+                    <p>username</p>
+                    <input type="text" class="username" placeholder = "username" name = "username">
+                    
+                </div>
+                <div class="password-container">
+                    <p>Password</p>
+                    <input type="text" class="password" placeholder = "password" name = "password">
+                    
+                </div>
+
+                <p class="profile-picture">
+                    <label for="">Select profile picture</label>
+                    <input type="file" name="profile-picture" id="profile-picture" accept="image/png, image/jpeg">
+                </p>
+
+                <p>
+                    <input type="submit" value="SignUp">
+                </p>
+
+                <p class = "loginLink switch-link"> already have an account ? login </p>
+                </form>
+        </div>
+
+    </div>
+
+    <script src="switchView.js"></script>
+</body>
+</html>
