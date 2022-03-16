@@ -302,3 +302,28 @@ body {
   background-color: var(--navbar-dark);
   border-bottom: 1px solid #686868;
 }
+
+.emoji:nth-child(5) {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 48em) {
+  .left-section {
+    display: none;
+  }
+
+  .right-section {
+    width: 100%;
+  }
+
+  .text-properties {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .emoji-section {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--navbar-dark);
+  }
+}
