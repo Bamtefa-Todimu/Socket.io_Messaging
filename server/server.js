@@ -6,6 +6,11 @@ const messages = require('./models/messages')
 const multer = require('multer')
 const serverless = require("serverless-http")
 
+const http = require('http');
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
+
 const bodyParser = require('body-parser')
 
 // app.use(express.json())
@@ -13,17 +18,17 @@ app.use(express.urlencoded({extended:true}))
 app.use('/api/v1',Users)
 app.use(bodyParser.json())
 
-app.listen(process.env.PORT || 4000, ()=>{
+server.listen(process.env.PORT || 4000, ()=>{
     dbConnection()
     console.log("listening on port 4000");
 })
 
 
-const io = require('socket.io')(process.env.PORT || 3000 , {
-    cors:{
-        origin:["http://localhost:8080"],
-    },
-})
+// const io = require('socket.io')(process.env.PORT || 3000 , {
+//     cors:{
+//         origin:["http://localhost:8080"],
+//     },
+// })
 
 var users = []
 io.on('connection' , async (socket)=>{
