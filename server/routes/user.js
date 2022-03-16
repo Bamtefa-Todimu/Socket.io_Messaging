@@ -30,7 +30,8 @@ routes.post('/register',upload.single('profile-picture'),async(req,res,next) => 
         const createdUser = await users.create({
             username:req.body.username,
             password:req.body.password,
-            profilePicture: "https://mighty-savannah-05559.herokuapp.com/uploads/" + req.body.username + "_" + req.file.originalname
+            // profilePicture: "https://mighty-savannah-05559.herokuapp.com/uploads/" + req.body.username + "_" + req.file.originalname
+            profilePicture: "uploads/GusDaBoss_gus-avatar.png"
         })
         const savedUser = await createdUser.save()
 
