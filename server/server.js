@@ -4,6 +4,7 @@ const {Users,userName} = require('./routes/user')
 const dbConnection = require('./dbConnection')
 const messages = require('./models/messages')
 const multer = require('multer')
+const serverless = require("serverless-http")
 
 const bodyParser = require('body-parser')
 
@@ -12,13 +13,13 @@ app.use(express.urlencoded({extended:true}))
 app.use('/api/v1',Users)
 app.use(bodyParser.json())
 
-app.listen(4000, ()=>{
+app.listen(process.env.PORT || 4000, ()=>{
     dbConnection()
     console.log("listening on port 4000");
 })
 
 
-const io = require('socket.io')(3000 , {
+const io = require('socket.io')(process.env.PORT || 3000 , {
     cors:{
         origin:["http://localhost:8080"],
     },
@@ -99,3 +100,5 @@ io.on('connection' , async (socket)=>{
         io.emit('userJoined',newUser)
     })
 })
+
+

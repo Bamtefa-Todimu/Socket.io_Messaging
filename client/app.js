@@ -36,7 +36,7 @@ toggleMode.addEventListener('click',function(e)
     })
 
 
-const socket = io("http://localhost:3000")
+const socket = io("https://mighty-savannah-05559.herokuapp.com/")
 socket.on("connect" , ()=>
 {
     socket.emit('user-joined',params,profilePicture)
