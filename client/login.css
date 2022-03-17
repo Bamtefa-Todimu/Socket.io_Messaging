@@ -24,7 +24,8 @@ input {
 .login-form-container,
 .signup-form-container {
   max-width: 350px;
-  height: 400px;
+  /* height: 400px; */
+  padding: 2.5rem 2rem;
   background-color: aquamarine;
   border: 1px solid #002d62;
   background-color: #111;

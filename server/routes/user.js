@@ -35,7 +35,7 @@ routes.post('/register',upload.single('profile-picture'),async(req,res,next) => 
         })
         const savedUser = await createdUser.save()
 
-        res.json({message:"successfully registed"})
+        res.redirect(`https://heuristic-keller-7238af.netlify.app/`)
     }
     catch(e)
     {
