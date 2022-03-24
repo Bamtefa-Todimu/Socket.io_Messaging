@@ -1,7 +1,5 @@
 import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
 
-
-
 const urlParam  = new URLSearchParams(window.location.search)
 const params  = urlParam.get('username');
 const profilePicture  = urlParam.get('profilepic');
@@ -48,7 +46,7 @@ toggleMode.addEventListener('click',function(e)
     })
 
 
-const socket = io("https://yarnsss.netlify.app")
+const socket = io("https://mighty-savannah-05559.herokuapp.com/")
 socket.on("connect" , ()=>
 {
     socket.emit('user-joined',params,profilePicture)
