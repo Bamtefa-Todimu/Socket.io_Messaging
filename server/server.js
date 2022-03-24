@@ -13,7 +13,7 @@ const { Server } = require("socket.io");
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "https://heuristic-keller-7238af.netlify.app",
+    origin: "https://yarnsss.netlify.app",
     methods: ["GET", "POST"]
   }
 });
