@@ -1,11 +1,35 @@
-
-
-
 var emojis = document.querySelectorAll('.emoji')
-// var toggleMode = document.querySelector('.toggle-mode')
-// var navbar = document.querySelector('.navbar')
-// var sidebar = document.querySelector('.left-section')
-// var messageSent = document.getElementsByClassName("message-sent")
+var boldBtn = document.querySelector('#bold-btn')
+var italicBtn = document.querySelector('#italic-btn')
+var mobileBtn = document.querySelector('.mobile-menu-btn')
+var leftSection = document.querySelector('.left-section')
+
+var createRoom = document.querySelector('.create-room-container')
+var createRoomBtn = document.querySelector('.create-room-btn')
+var displayCreateRoom = document.querySelector('.addRoom')
+var room = document.querySelector('.room')
+var newRoominput = document.querySelector('.new-room-input')
+var closeCreateBtn = document.querySelector('.close-create-room')
+var roomName;
+
+displayCreateRoom.addEventListener('click', function(e)
+{
+    createRoom.style.display = "flex"
+})
+
+createRoomBtn.addEventListener('click',function(e)
+{
+    roomName = newRoominput.value
+    room.innerHTML += `<a href=""><p class = "individual-room" id = "${roomName}" onclick = "joinRoom(event)"># ${roomName}</p></a>`
+    createRoom.style.display = "none"
+})
+
+closeCreateBtn.addEventListener('click',function(e)
+{
+    createRoom.style.display = "none"
+
+})
+
 
 
 emojis.forEach((emoji) => {
@@ -19,22 +43,24 @@ emojis.forEach((emoji) => {
 })
 
 
-    
-    // toggleMode.addEventListener('click',function(e)
-    // {
-    //     document.body.classList.toggle('body-dark')
-    //     navbar.classList.toggle('navbar-dark')
-    //     sidebar.classList.toggle('sidebar-dark')
-    //     alert("here")
-        
-    //     console.log(messageSent);
-    //     for(let message of messageSent)
-    //     {
-    //         // alert("here")
-    //         message.classList.toggle('message-dark')
-    //      }
-    // })
-    
+boldBtn.addEventListener("click",() => changeStyle("bold"))
+italicBtn.addEventListener("click",() => changeStyle("italic"))
+
+mobileBtn.addEventListener("click",(e) => {
+    e.preventDefault()
+    leftSection.classList.toggle('left-section-displayed')
+})
+
+
+function changeStyle(style)
+{
+    var messageBox = document.querySelector('.message-box')
+   
+    if(style === "bold")messageBox.classList.toggle("bolded-message")
+     else messageBox.classList.toggle("italized-message")
+}   
+
+
 
     
     

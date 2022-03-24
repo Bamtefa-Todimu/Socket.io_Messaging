@@ -35,7 +35,7 @@ routes.post('/register',upload.single('profile-picture'),async(req,res,next) => 
         })
         const savedUser = await createdUser.save()
 
-        res.redirect(`https://heuristic-keller-7238af.netlify.app/`)
+        res.redirect(`https://yarnsss.netlify.app/`)
     }
     catch(e)
     {
@@ -52,7 +52,7 @@ routes.post('/login', async (req,res) => {
         {
             console.log(verifyUser);
             // res.json({message:username})
-            res.redirect(`https://heuristic-keller-7238af.netlify.app/chat.html?username=${req.body.username}&profilepic=${verifyUser[0].profilePicture}`)
+            res.redirect(`https://yarnsss.netlify.app/chat.html?username=${req.body.username}&profilepic=${verifyUser[0].profilePicture}`)
         }
         else
         {

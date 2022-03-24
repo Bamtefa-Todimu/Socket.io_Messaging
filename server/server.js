@@ -70,6 +70,12 @@ io.on('connection' , async (socket)=>{
         
     })
 
+    //changed (added new listener for displaying chat history)
+    socket.on("displayPrevious",async ()=>{
+        const prevMsg = await messages.find() 
+        socket.emit("previousMessages",prevMsg)
+    })
+
     socket.on('removeUser',(id) => {
         console.log(id);
     })
@@ -80,16 +86,17 @@ io.on('connection' , async (socket)=>{
 
 
     io.emit('connectedUser',socket.id)
-    socket.on('sentMessage',async (msg,username,profilepicture) => {
+    socket.on('sentMessage',async (msg,username,profilepicture,recipient) => {
         
         try{
             const saveMessage = await messages.create({
                 username:username,
                 message:msg,
-                profilepic:profilepicture   
+                profilepic:profilepicture,  
+                recipient:recipient.username 
             })
             const messageSaved = await saveMessage.save()
-            io.emit('recievedMessage',msg,username,socket.id,profilepicture)
+            io.to(recipient.selectedId).emit('recievedMessage',msg,username,socket.id,profilepicture,recipient.username)
         }
         catch(e)
         {

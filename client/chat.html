@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src = "app.js" type = "module"></script>
-    
+    <script src="app.js" type="module"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <div class="site-container">
 
         <div class="navbar">
-            
-            <div class="mobile-btn">
+
+            <div class="mobile-btn mobile-menu-btn">
                 <img src="images/hamburger.png" alt="mobile">
             </div>
 
@@ -29,36 +35,62 @@
                 <img src="images/moon.png" alt="">
             </div>
 
-            <div class = "profile-pic userProfile">
+            <div class="profile-pic userProfile">
 
             </div>
-            
+
         </div>
 
         <div class="body-container">
-            
-            <div class="left-section">   
+
+            <div class="left-section">
                 <div class="rooms-section">
-                    <p>#rooms</p>
-                    <p class="room">#general</p>
+                    <!-- modified the room header -->
+                    <div class="room-header">
+                        <div class="dropdown-btn">
+                            <img src="images/dropdownbtn.png" alt="">
+                            <p>rooms</p>
+                        </div>
+                        <div class="addRoom">
+                            <img src="images/addRoom.png" alt="">
+                        </div>
+                    </div>
+                    <div class="room">
+
+                        <a href="">
+                            <p class="individual-room" id="general" onclick="joinRoom(event)"># general</p>
+                        </a>
+                        <a href="">
+                            <p class="individual-room" id="javascript" onclick="joinRoom(event)"># javascript</p>
+                        </a>
+                        <a href="">
+                            <p class="individual-room" id="webSockets" onclick="joinRoom(event)"># web sockets</p>
+                        </a>
+                        <a href="">
+                            <p class="individual-room" id="dsandalgo" onclick="joinRoom(event)"># DS and ALGO</p>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="active-users">
-                    <h3>#active users</h3>
+                    <div class="dropdown-btn">
+                        <img src="images/dropdownbtn.png" alt="">
+                        <h3>active users</h3>
+                    </div>
                 </div>
             </div>
-            
+
             <div class="right-section">
                 <div class="message-area">
-                    
+
                 </div>
-                
+
                 <div class="custom-message-box">
                     <div class="text-properties">
 
                         <div class="text-change-func">
-                            <div class="mobile-btn"> <img src="images/muscle.png" alt=""></div>
-                            <div class="mobile-btn"> <img src="images/pizza.png" alt=""></div>
+                            <div class="mobile-btn" id="bold-btn"> <img src="images/muscle.png" alt=""></div>
+                            <div class="mobile-btn" id="italic-btn"> <img src="images/pizza.png" alt=""></div>
                             <div class="mobile-btn"> <img src="images/hamburger.png" alt=""></div>
                         </div>
 
@@ -72,12 +104,12 @@
                     </div>
 
                     <div class="message-send-area">
-                        <input type="text" class="message-box" placeholder = "Enter Message Here 😀">
+                        <input type="text" class="message-box" placeholder="Enter Message Here 😀">
                     </div>
-                    
+
                     <div class="lower-properties">
                         <div class="lower-props">
-                            
+
                         </div>
                         <div class="send-btn">
                             <img src="images/send.png" alt="">
@@ -86,13 +118,26 @@
                 </div>
             </div>
         </div>
-        
+
+
+        <div class="create-room-container">
+            <div class="create-room-section">
+                <h1>Add a new room</h1>
+                <p>
+                    <input type="text" class="new-room-input">
+                </p>
+                <div class="create-room-btn">
+                    Add Room
+                </div>
+            </div>
+
+            <p class="close-create-room">abort</p>
+        </div>
+
 
     </div>
 
-    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
-        integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
-        crossorigin="anonymous"></script>
     <script src="app2.js"></script>
 </body>
+
 </html>

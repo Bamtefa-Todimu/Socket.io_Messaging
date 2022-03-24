@@ -13,6 +13,8 @@ body {
 
 * {
   font-family: "JetBrains Mono", monospace;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -20,6 +22,10 @@ body {
   /* color: black; */
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
 .site-container {
   max-width: 1920px;
   margin: 0 auto;
@@ -76,7 +82,6 @@ body {
   /* width: 100%; */
   transition: background-color 0.3s ease-in-out;
   cursor: pointer;
-  margin-bottom: 0.5rem;
 }
 
 .user-profile:hover {
@@ -100,6 +105,26 @@ body {
 
 .user-profile p {
   margin-left: 1rem;
+}
+
+.room-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room-header img {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.active-dot {
+  font-size: 1.5rem;
+  color: #148567;
+  height: 100%;
 }
 
 .right-section {
@@ -271,6 +296,25 @@ body {
   margin-left: 1rem;
 }
 
+.individual-room {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.individual-room:hover {
+  color: palevioletred;
+}
+
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-btn img {
+  width: 15px;
+  height: 15px;
+}
+
 .toggle-mode {
   width: 25px;
   height: 25px;
@@ -306,9 +350,69 @@ body {
   margin-right: 0;
 }
 
+.bolded-message {
+  font-weight: 700;
+}
+
+.italized-message {
+  font-style: italic;
+}
+
+.mobile-menu-btn {
+  z-index: 100;
+}
+
+.create-room-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2em 1em;
+  background-color: #333333;
+  color: white;
+  display: none;
+}
+
+.create-room-container h1 {
+  margin-bottom: 1em;
+}
+
+.create-room-container input {
+  padding: 0.5em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.create-room-btn {
+  padding: 1em;
+  background-color: #148567;
+  color: white;
+}
+
+.close-create-room {
+  color: red;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 48em) {
   .left-section {
-    display: none;
+    /* display: none; */
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    transform: translateX(-200px);
+    opacity: 0;
+    width: 50vw;
+    z-index: 50;
+    backdrop-filter: blur(2px);
+    background-color: transparent;
+  }
+
+  .left-section-displayed {
+    transform: translate(0);
+    opacity: 1;
   }
 
   .right-section {

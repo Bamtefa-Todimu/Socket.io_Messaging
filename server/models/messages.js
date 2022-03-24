@@ -6,6 +6,11 @@ const dbSchema = mongoose.Schema({
         type:String,
         required:true
     },
+    recipient:{
+        type:String,
+        required:true,
+        default:"general"
+    },
     message:{
         type:String,
         required:true
