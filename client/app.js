@@ -1,4 +1,6 @@
-import {io, Socket} from 'socket.io-client'
+import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
+
+
 
 const urlParam  = new URLSearchParams(window.location.search)
 const params  = urlParam.get('username');
